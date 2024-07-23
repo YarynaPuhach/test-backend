@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "zadanie_zdalne_e_msi_user",
+    "password": "BTadAbhN7j3BvPcxFsM7ytzcYyQHtWoh",
+    "database": "zadanie_zdalne_e_msi",
+    "host": "dpg-cqfnq3tds78s73c1vcc0-a.frankfurt-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
