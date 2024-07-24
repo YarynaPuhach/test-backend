@@ -21,17 +21,14 @@ export const EmployeeMap = (sequelize) => {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    department: {
-      type: DataTypes.STRING(255),
+    hireDate: { // Data zatrudnienia
+      type: DataTypes.DATE,
       allowNull: false
     },
-    email: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    phoneNumber: {
-      type: DataTypes.STRING(20),
-      allowNull: false
+    vacationDays: { // Ilość dni urlopowych
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0 // Default to 0 if not specified
     }
   }, {
     sequelize,
