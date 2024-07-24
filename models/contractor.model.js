@@ -35,6 +35,10 @@ export const ContractorMap = (sequelize) => {
     },
     apartmentNumber: {
       type: DataTypes.STRING(10)
+    },
+    deleted: { // Soft delete flag
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   }, {
     sequelize,

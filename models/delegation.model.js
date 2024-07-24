@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 
-class Delegation extends Model { }
+class Delegation extends Model {}
 
 export const DelegationMap = (sequelize) => {
   Delegation.init({
