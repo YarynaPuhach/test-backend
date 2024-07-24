@@ -1,4 +1,4 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Invoice extends Model { }
 
@@ -11,11 +11,19 @@ export const InvoiceMap = (sequelize) => {
     },
     contractorId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'Contractors',
+        key: 'id'
+      }
     },
     employeeId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'Employees',
+        key: 'id'
+      }
     },
     amount: {
       type: DataTypes.DECIMAL(10, 2),
@@ -34,7 +42,6 @@ export const InvoiceMap = (sequelize) => {
     tableName: 'Invoices',
     timestamps: false
   });
-  Invoice.sync();
-}
+};
 
 export default Invoice;

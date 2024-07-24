@@ -1,4 +1,4 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Delegation extends Model { }
 
@@ -34,7 +34,6 @@ export const DelegationMap = (sequelize) => {
     tableName: 'Delegations',
     timestamps: false
   });
-  Delegation.sync();
-}
+};
 
 export default Delegation;

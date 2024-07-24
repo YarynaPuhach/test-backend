@@ -46,4 +46,14 @@ EmployeeMap(sequelize);
 InvoiceMap(sequelize);
 DelegationMap(sequelize);
 
-export { sequelize };
+// Sync models
+const syncModels = async () => {
+  try {
+    await sequelize.sync({ alter: true }); // or { force: true } for development only
+    console.log('Database synced');
+  } catch (error) {
+    console.error('Unable to sync the database:', error);
+  }
+};
+
+export { sequelize, syncModels };

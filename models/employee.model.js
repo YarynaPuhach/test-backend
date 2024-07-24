@@ -1,4 +1,4 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Employee extends Model { }
 
@@ -38,7 +38,6 @@ export const EmployeeMap = (sequelize) => {
     tableName: 'Employees',
     timestamps: false
   });
-  Employee.sync();
-}
+};
 
 export default Employee;

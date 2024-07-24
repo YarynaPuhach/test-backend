@@ -1,4 +1,4 @@
-import { Model, DataTypes, Sequelize } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 
 class Contractor extends Model { }
 
@@ -9,36 +9,38 @@ export const ContractorMap = (sequelize) => {
       autoIncrement: true,
       primaryKey: true
     },
-    firstName: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    lastName: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    position: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    department: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    email: {
-      type: DataTypes.STRING(255),
-      allowNull: false
-    },
-    phoneNumber: {
+    nip: {
       type: DataTypes.STRING(20),
       allowNull: false
+    },
+    regon: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
+    name: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    vatPayer: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    street: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    houseNumber: {
+      type: DataTypes.STRING(10),
+      allowNull: false
+    },
+    apartmentNumber: {
+      type: DataTypes.STRING(10)
     }
   }, {
     sequelize,
     tableName: 'Contractors',
     timestamps: false
   });
-  Contractor.sync();
-}
+};
 
 export default Contractor;

@@ -5,7 +5,7 @@ import contractorRoutes from './routes/contractor.routes.js';
 import employeeRoutes from './routes/employee.routes.js';
 import invoiceRoutes from './routes/invoice.routes.js';
 import delegationRoutes from './routes/delegation.routes.js';
-import { sequelize } from './models/index.js'; // Переконайтеся, що шлях правильний
+import { sequelize, syncModels } from './models/index.js';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -19,7 +19,7 @@ app.use('/api/employees', employeeRoutes);
 app.use('/api/invoices', invoiceRoutes);
 app.use('/api/delegations', delegationRoutes);
 
-sequelize.sync().then(() => {
+syncModels().then(() => {
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
